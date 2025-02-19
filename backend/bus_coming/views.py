@@ -1,14 +1,13 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from decouple import Config, RepositoryEnv, AutoConfig
+from decouple import config, Config, RepositoryEnv, AutoConfig
 import requests
 
 
 
 class BusStopsView(APIView):
     def get(self, request):
-        config = Config(RepositoryEnv("/bus_coming_proj/backend/bus_coming_site/.env"))
         url = "https://datamall2.mytransport.sg/ltaodataservice/BusStops"
         API_KEY = config("API_KEY")
         headers = {
