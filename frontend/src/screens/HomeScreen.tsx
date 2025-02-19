@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Container, Title, Text, TextInput, Stack } from '@mantine/core'
+import { Button, Container, Title, Text, TextInput, Stack, Group } from '@mantine/core'
 import { Link } from 'react-router-dom'
 
 const HomeScreen: React.FC = () => {
@@ -15,9 +15,16 @@ const HomeScreen: React.FC = () => {
                     placeholder="Search busses and bus stops"
                 />
             </Link>
-            <Button variant="filled" size="md">
-                Get started
-            </Button>
+            <Group>
+                <Button variant="filled" size="md">
+                    Get started
+                </Button>
+                <Link to="/nearby">
+                    <Button variant="filled" size="md">
+                        Search nearby
+                    </Button>
+                </Link>
+            </Group>
         </Stack>
     )
 }
