@@ -4,8 +4,6 @@ from rest_framework.response import Response
 from decouple import config, Config, RepositoryEnv, AutoConfig
 import requests
 
-
-
 class BusStopsView(APIView):
     def get(self, request):
         url = "https://datamall2.mytransport.sg/ltaodataservice/BusStops"
